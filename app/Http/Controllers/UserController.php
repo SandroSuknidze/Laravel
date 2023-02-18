@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -16,10 +17,13 @@ class UserController extends Controller
         $formFields = $request->validate([
             'name' => ['required', 'min:3'],
             'email' => ['required', 'email', Rule::unique('users', 'email')],
-            'password' => 'required|min:6|confirmed'
+            'password' => 'required|min:6|confirmed',
+            'remember_token' => Str::random(10)
         ]);
 
         $formFields['password'] = bcrypt($formFields['password']);
+
+        $formFields['remember_token'] = Str::random(10);
 
         $user = User::create($formFields);
 

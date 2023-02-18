@@ -21,7 +21,7 @@ class Listings extends Model
 
     public function scopeFilter($query, array $filters) {
 
-        if($filters['tag'] ?? false) {
+        if($filters['tags'] ?? false) {
             $query->where('tags', 'like', '%' . request('tags') . '%');
         }
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,10 +20,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-// Route::get('/posts', function () {
-//     return response()->json([
-//         'posts' => [
-//             'title' => 'nesvi'
-//         ]
-//     ]);
-// });
+Route::get('/posts', function () {
+    return response()->json([
+        'posts' => [
+            'title' => 'nesvi'
+        ]
+    ]);
+});
+
+
+Route::get('/users', function () {
+    $user = User::all();
+    return $user;
+});

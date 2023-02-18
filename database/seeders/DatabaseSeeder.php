@@ -18,14 +18,14 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        $user = User::factory()->create([
-            'name' => 'Sandro',
-            'email' => 'sandro@gmail.com'
-        ]);
+        // $user = User::factory()->create([
+        //     'name' => 'Sandro',
+        //     'email' => 'sandro@gmail.com'
+        // ]);
 
-        Listings::factory(10)->create([
-            'user_id' => $user->id
-        ]);
+        // Listings::factory(10)->create([
+        //     'user_id' => $user->id
+        // ]);
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
