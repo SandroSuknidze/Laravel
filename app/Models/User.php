@@ -8,10 +8,11 @@ namespace App\Models;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 
+use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -31,10 +32,10 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    // protected $hidden = [
-    //     'password',
-    //     'remember_token',
-    // ];
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
 
     /**
      * The attributes that should be cast.
@@ -50,4 +51,8 @@ class User extends Authenticatable
     public function listings() {
         return $this->hasMany(Listings::class, 'user_id');
     }
+
+    public function canAccessFilament(): bool {
+        return str_ends_with($this->email, '@admin.admin');
+    } 
 }

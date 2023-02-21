@@ -14,6 +14,15 @@
 
                     <form method="POST" action="/users">
                         @csrf
+
+                        <div class="mb-6 text-center border-2 p-6 rounded-2xl bg-white">
+                            <a href="{{ route('google.login') }}" class="btn btn-google btn-user btn-block">
+                                <i class="fab fa-google fa-fw"></i> Login with Google
+                            </a>
+                        </div>
+
+                        <hr>
+                        <br>
                         <div class="mb-6">
                             <label for="name" class="inline-block text-lg mb-2">
                                 Name

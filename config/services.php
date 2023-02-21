@@ -31,4 +31,16 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'github' => [
+        'client_id' => env('GITHUB_CLIENT_ID'),         // Your GitHub Client ID
+        'client_secret' => env('GITHUB_CLIENT_SECRET'), // Your GitHub Client Secret
+        'redirect' => 'http://your-callback-url',
+    ],
+
+    'google' => [
+        'client_id' => '', //USE FROM Google DEVELOPER ACCOUNT
+        'client_secret' => '', //USE FROM Google DEVELOPER ACCOUNT
+        'redirect' => 'https://0a41-106-212-124-50.ngrok.io/google/callback/'
+    ],
+
 ];

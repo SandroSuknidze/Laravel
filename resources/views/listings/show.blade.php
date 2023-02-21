@@ -20,6 +20,11 @@
             <h1 class="font-black text-4xl my-4">Item Description</h1>
             <p class="my-16">{{$listing['description']}}</p>
     </div>
+    <hr>
+    <div class="p-6">
+        <button><i class="fa-solid fa-add"></i> Add to wishlist</button>
+        
+    </div>
     {{-- <x-card class="mt-4 p-2 space-x-6">
         <a href="/listings/{{$listing->id}}/edit" ><i class="fa-solid fa-pencil"></i> Edit</a>
         

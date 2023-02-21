@@ -27,7 +27,10 @@ class UserController extends Controller
 
         $user = User::create($formFields);
 
+        
+
         auth()->login($user);
+        // $user = User::all();
 
         return redirect('/')->with('message', 'User has been created and logged in!');
     }
@@ -60,5 +63,9 @@ class UserController extends Controller
         }
 
         return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
+    }
+
+    public function user($user) {
+        return view('users.public_user', ['user'=>$user]);
     }
 }

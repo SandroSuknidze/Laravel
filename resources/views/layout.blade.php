@@ -26,6 +26,12 @@
                 <a href="/listings/create"><i class="fa-sharp fa-solid fa-plus"></i> Create Gig</a>
             </li>
             <li>
+                <a href="/users/profile"><i class="fa-sharp fa-solid fa-user"></i> Profile</a>
+            </li>
+            <li>
+                <a href="/users/wishlist"><i class="fa-sharp fa-solid fa-shopping-cart"></i> Wishlist</a>
+            </li>
+            <li>
                 <a href="/listings/manage"><i class="fa-solid fa-gear"></i> Manage Gigs</a>
             </li>
             <li>
